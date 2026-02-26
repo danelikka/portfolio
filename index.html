@@ -232,29 +232,20 @@
             </a>
           </div>
         </div>
-
-        <form class="form" id="contactForm" action="https://form.jotform.com/260553199392061" method="POST">
-            <label>
-                Ім’я
-                <input type="text" name="name" placeholder="Ваше ім’я" required />
-            </label>
-
-            <label>
-                Email
-                <input type="email" name="email" placeholder="you@example.com" required />
-            </label>
-
-            <label>
-                Повідомлення
-                <textarea name="message" rows="4" placeholder="Коротко: що треба зробити?" required></textarea>
-            </label>
-
-            <!-- антиспам honeypot (приховане поле) -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-
-            <button class="btn btn--primary" type="submit">Надіслати</button>
-            <p class="form__hint" id="formHint">Відповім максимально швидко</p>
-            </form>
+        <iframe
+      id="JotFormIFrame-260553199392061"
+      title="Contact Us"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen; payment"
+      src="https://form.jotform.com/260553199392061"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260553199392061']", "https://form.jotform.com/")</script>
       </div>
     </div>
   </section>
