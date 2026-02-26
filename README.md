@@ -34,9 +34,9 @@
 
 ##  Контакти
 
-- 📧 Email: bogdanka1833@icloud.com  
-- 💻 GitHub: https://github.com/Danelikka  
-- 📩 Telegram: https://t.me/danelikka  
+-  Email: bogdanka1833@icloud.com  
+-  GitHub: https://github.com/Danelikka  
+-  Telegram: https://t.me/danelikka  
 
 ---
 
@@ -55,7 +55,7 @@ I have experience delivering several web projects and I’m open to commercial o
 
 🔗 [View Website](https://Danelikka.github.io/portfolio/)
 
-### 🛠 Tech Stack
+###  Tech Stack
 
 - HTML5  
 - CSS3 (Flexbox, Grid, Responsive Design)  
@@ -73,9 +73,9 @@ I have experience delivering several web projects and I’m open to commercial o
 
 ###  Contact
 
-- 📧 Email: bogdanka1833@icloud.com  
-- 💻 GitHub: https://github.com/Danelikka  
-- 📩 Telegram: https://t.me/danelikka  
+-  Email: bogdanka1833@icloud.com  
+-  GitHub: https://github.com/Danelikka  
+-  Telegram: https://t.me/danelikka  
 
 ###  Status
 
