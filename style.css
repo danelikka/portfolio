@@ -252,15 +252,16 @@ input, textarea{
     align-items:flex-start; 
 }
   .hero__photo{ 
-    margin-left: -20px;   /* твій padding */
-    margin-right: -20px;
+    width: 100%;
+    height: 320px;
   } 
   .hero__photo img{ 
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* зберігаємо пропорції і обрізаємо зайве */
+    object-position: center 35%; /* піднімаємо фото щоб було видно обличчя */
     display: block;
-    }
+}
 }
   .cards{ grid-template-columns: 1fr; }
   .contact{ grid-template-columns: 1fr; }
@@ -416,7 +417,7 @@ input:focus, textarea:focus{
 }
 
 /* mobile */
-@media (max-width: 900px){
+@media (max-width: 768px){
   .services{
     grid-template-columns: 1fr;
   }
@@ -551,7 +552,7 @@ input:focus, textarea:focus{
 }
 
 /* hide desktop nav / show burger on mobile */
-@media (max-width: 900px){
+@media (max-width: 768px){
   .nav--desktop{ display:none; }
   .burger{ display:flex; }
 }
