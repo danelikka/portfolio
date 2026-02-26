@@ -53,16 +53,19 @@ a{ color: inherit; text-decoration:none; }
 }
 .hero__photo{
   flex: 0 0 220px;
+  height: 220px;
   border-radius: var(--radius);
   overflow:hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 .hero__photo img{
-  height: 260px;
-  object-fit: cover;
-  display:block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* головне */
+  object-position: center 30%;  /* можна left center якщо треба */
 }
+
 .hero__content{ flex: 1; }
 .hero__kicker{
   color: var(--muted);
