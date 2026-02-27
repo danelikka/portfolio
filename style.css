@@ -155,24 +155,43 @@ a{ color: inherit; text-decoration:none; }
   background:#fff;
 }
 
-/* contacts */
-.contact{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+/* лівий блок: ВЛІВО, як “блок 2” */
+.contacts__info{
+  text-align: left;
 }
-.contact__box{
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
+.contacts__info h3{
+  margin: 0 0 10px;
+  font-size: 26px;
 }
-.contact__links{
-  display:flex;
-  flex-direction:column;
-  gap: 14px;
-  margin-top: 16px;
+.contacts__info .muted{
+  margin: 0 0 16px;
+  color: var(--muted);
 }
 
+/* рядки-лінки з іконкою */
+.contact-link{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.contact-link:hover{
+  background: rgba(0,0,0,0.04);
+}
+
+.contact-link .ico{
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.06);
+}
 .link--icon{
   display:inline-flex;
   align-items:center;
@@ -232,6 +251,7 @@ input, textarea{
 
 /* footer */
 .footer{
+    margin-top: 60px;
   border-top: 1px solid var(--border);
   padding: 18px 0;
   color: var(--muted);
@@ -262,11 +282,11 @@ input, textarea{
     object-position: center 35%; /* піднімаємо фото щоб було видно обличчя */
     display: block;
 }
-}
+
   .cards{ grid-template-columns: 1fr; }
   .contact{ grid-template-columns: 1fr; }
   .nav{ display:none; } /* якщо хочеш — зробимо бургер */
-
+}
 /* smooth UI */
 *{
   scroll-behavior: smooth;
@@ -560,4 +580,170 @@ input:focus, textarea:focus{
 /* stop body scroll when menu open */
 body.menu-open{
   overflow: hidden;
+}
+
+@media (max-width: 768px){
+  .contact__grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* left block should look like card too (як блок 2) */
+.contact__box{
+  background: rgba(255,255,255,0.45);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  text-align: left;
+}
+
+/* right block card (у тебе вже є contacts__card, але підстрахуєм) */
+.contacts__card{
+  background: rgba(255,255,255,0.45);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+/* links block spacing */
+.contact__links{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+.contact__grid{
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 24px;
+  align-items: stretch; /* 🔥 важливо */
+}
+
+/* щоб обидві картки тягнулись */
+.contact__box,
+.contacts__card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.contact__form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.contact__form input,
+.contact__form textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+}
+
+.contact__form textarea{
+  min-height: 110px;
+  resize: vertical;
+}
+.contact__form button{
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #0b1220, #1f2937);
+  color: white;
+
+  transition: all .25s ease;
+}
+
+.contact__form button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+/* --- Для кого потрібен сайт: як "Що я можу" --- */
+.audience .cards,
+.audience__grid,
+.forwho__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.audience .card,
+.audience__card,
+.forwho__card{
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255,255,255,.6);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+@media (max-width: 768px){
+  .audience .cards,
+  .audience__grid,
+  .forwho__grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* Для кого потрібен сайт — 3 колонки */
+#audience .cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 768px){
+  #audience .cards{
+    grid-template-columns: 1fr;
+  }
+}
+/* Про мене — 3 блоки в ряд */
+#about .cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 768px){
+  #about .cards{
+    grid-template-columns: 1fr;
+  }
+}
+/* Mobile menu overlay */
+.mobile{
+  position: fixed;
+  inset: 0;              /* top:0 right:0 bottom:0 left:0 */
+  z-index: 999;
+  display: none;         /* важливо: не займає місця */
+}
+
+/* коли меню відкрите */
+.mobile.is-open{
+  display: block;
+}
+
+.mobile__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+}
+
+.mobile__panel{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(320px, 85vw);
+  background: #fff;
+  padding: 20px;
 }
